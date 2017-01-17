@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #d3d3d3;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="127.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="294.0" minHeight="10.0" prefHeight="276.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="132.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox prefHeight="170.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="playerHpVal" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #ff5e5e;" text="hp" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="playerMaxHpVal" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="81.0" prefWidth="35.0" style="-fx-background-color: #aa2c2c;" text="maxHp" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="stoneButton" disable="true" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onStoneButton" prefHeight="87.0" prefWidth="70.0">
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/drawables/rock_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label fx:id="playerStoneVal" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="119.0" prefWidth="335.0" style="-fx-background-color: #aaaaaa;" text="0" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="paperButton" disable="true" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onPaperButton" prefHeight="63.0" prefWidth="70.0">
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/drawables/paper_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label fx:id="playerPaperVal" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="128.0" prefWidth="362.0" style="-fx-background-color: #aaaaaa;" text="0" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="scissorsButton" disable="true" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onScissorsButton" prefHeight="63.0" prefWidth="70.0">
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/drawables/scisors_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label fx:id="playerScissorVal" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="132.0" prefWidth="317.0" style="-fx-background-color: #aaaaaa;" text="0" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="170.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="monsterHpVal" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #ff5e5e;" text="0" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="monsterMaxHpVal" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="81.0" prefWidth="35.0" style="-fx-background-color: #aa2c2c;" text="0" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="monsterStoneVal" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="234.0" prefWidth="502.0" style="-fx-background-color: #aaaaaa;" text="0" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER_RIGHT" disable="true" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="87.0" prefWidth="70.0">
+                     <graphic>
+                        <ImageView disable="true" fitHeight="70.0" fitWidth="70.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/drawables/rock_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="monsterPaperVal" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="194.0" prefWidth="485.0" style="-fx-background-color: #aaaaaa;" text="0" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Button disable="true" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="63.0" prefWidth="70.0">
+                     <graphic>
+                        <ImageView disable="true" fitHeight="70.0" fitWidth="70.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/drawables/paper_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="monsterScissorsVal" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="164.0" prefWidth="375.0" style="-fx-background-color: #aaaaaa;" text="0" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Button disable="true" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="63.0" prefWidth="70.0">
+                     <graphic>
+                        <ImageView disable="true" fitHeight="70.0" fitWidth="70.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/drawables/scisors_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label fx:id="heroName" alignment="CENTER" prefHeight="300.0" prefWidth="512.0" text="heroName">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="monsterName" alignment="CENTER" prefHeight="266.0" prefWidth="575.0" GridPane.columnIndex="2">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Button fx:id="fightButton" mnemonicParsing="false" onAction="#onFightButton" prefHeight="208.0" prefWidth="451.0" style="-fx-background-color: #ed7878;" text="Walcz!" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Button>
+      <HBox prefHeight="100.0" prefWidth="200.0" />
+      <ImageView fx:id="playerAtack" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <ImageView fx:id="monsterAtack" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+      <Label fx:id="killsLabel" alignment="CENTER" prefHeight="201.0" prefWidth="485.0" text="0" GridPane.rowIndex="2">
+         <font>
+            <Font name="System Bold" size="66.0" />
+         </font>
+      </Label>
+      <Label fx:id="stateLabel" alignment="CENTER" prefHeight="165.0" prefWidth="367.0" text="Oczekiwanie" textFill="#ed7878" GridPane.columnIndex="1">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+   </children>
+</GridPane>
